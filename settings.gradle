@@ -1,0 +1,6 @@
+rootProject.name = "ComponentDemo1"
+include ':app'
+include ':modulework:main'
+include ':modulefunc:pay'
+include ':modulebase:base'
+include ':modulework:login'

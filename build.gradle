@@ -1,0 +1,60 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+buildscript {
+    ext.kotlin_version = "1.4.31"
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies {
+        classpath "com.android.tools.build:gradle:4.2.0"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        maven { url 'https://maven.aliyun.com/repository/public' }
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://jitpack.io' }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+
+ext {
+
+    isDebug = false
+    android = [
+            compileSdkVersion: 32,
+            buildToolsVersion: "33.0.2",
+            minSdkVersion    : 23,
+            targetSdkVersion : 32,
+            versionCode      : 1,
+            versionName      : "1.0"
+    ]
+
+    applicationId = [
+            "app"  : "com.jx.componentdemo1",
+            "main" : "com.jx.modulework.main",
+            "login": "com.jx.modulework.login"
+    ]
+
+    library = [
+            "kotlin"          : "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version",
+            "corektx"         : "androidx.core:core-ktx:1.3.1",
+            "appcompat"       : "androidx.appcompat:appcompat:1.2.0",
+            "material"        : "com.google.android.material:material:1.2.1",
+            "constraintlayout": "androidx.constraintlayout:constraintlayout:2.0.1"
+    ]
+
+    libARouter = "com.alibaba:arouter-api:1.5.1"
+    libARouterCompiler = "com.alibaba:arouter-compiler:1.5.1"
+    libGson = "com.google.code.gson:gson:2.8.6"
+
+}
