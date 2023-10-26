@@ -3,10 +3,12 @@ if (cfg.isDebug) {
     apply plugin: 'com.android.application'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-android-extensions'
 } else {
     apply plugin: 'com.android.library'
     apply plugin: 'kotlin-android'
     apply plugin: 'kotlin-kapt'
+    apply plugin: 'kotlin-android-extensions'
 }
 
 android {

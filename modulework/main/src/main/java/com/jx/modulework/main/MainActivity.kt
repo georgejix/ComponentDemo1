@@ -6,6 +6,7 @@ import android.util.Log
 import com.alibaba.android.arouter.facade.annotation.Autowired
 import com.alibaba.android.arouter.facade.annotation.Route
 import com.alibaba.android.arouter.launcher.ARouter
+import kotlinx.android.synthetic.main.activity_main.*
 
 @Route(path = "/main/MainActivity")
 class MainActivity : AppCompatActivity() {
@@ -30,5 +31,8 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         Log.d(TAG, "value1 = ${value1} value2= ${value2_}")
+        tv_main.setOnClickListener { v->
+            ARouter.getInstance().build("/login/LoginActivity").navigation()
+        }
     }
 }
